@@ -1,8 +1,4 @@
-docker run -it
-    -v /home/yaqwaqwa:/root
-    -p 3000:3000
-    --name Abathur
-    python:2-slim
+docker container run -it -v $HOME:/root -p 3000:3000 --name Abathur python:2-slim
 
 import pip
 pip.main(['install', 'Flask'])
