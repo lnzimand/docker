@@ -1,6 +1,6 @@
 FROM debian
 
-MAINTAINER YaQwaQwa <lnzimand@student.wethinkcode.co.za>
+LABEL maintainer="YaQwaQwa <lnzimand@student.wethinkcode.co.za>"
 
 ENV TSV=3.5.5 TS3SERVER_LICENSE=accept
 #Accepts the teamspeak license
@@ -18,7 +18,7 @@ WORKDIR teamspeak3-server_linux_amd64
 ENTRYPOINT sh ts3server_minimal_runscript.sh
 
 # Building it
-# docker build -t teamspeakerimg .
+# docker build -t teamspeaker .
 
 # How to run it?
 # docker run --rm -p 9987:9987/udp -p 10011:10011 -p 30033:30033 teamspeakerimg

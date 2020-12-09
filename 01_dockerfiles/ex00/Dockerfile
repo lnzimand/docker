@@ -1,6 +1,6 @@
 FROM alpine
 
-MAINTAINER yaqwaqwa	<lnzimand@student.wethinkcode.co.za>
+LABEL maintainer="YaQwaQwa <lnzimand@student.wethinkcode.co.za>"
 
 #install vim
 RUN apk update && apk upgrade && apk add vim
