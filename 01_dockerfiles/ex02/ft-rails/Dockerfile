@@ -14,3 +14,5 @@ ONBUILD RUN rake db:seed
 
 # How to build it?
 # docker build -t <tag name> .
+
+git clone https://github.com/docker/docker.git
