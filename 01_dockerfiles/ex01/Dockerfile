@@ -18,10 +18,10 @@ WORKDIR teamspeak3-server_linux_amd64
 ENTRYPOINT sh ts3server_minimal_runscript.sh
 
 # Building it
-# docker build -t teamspeaker .
+# docker build -t ex01:1.0 .
 
 # How to run it?
-# docker run --rm -p 9987:9987/udp -p 10011:10011 -p 30033:30033 teamspeakerimg
+# docker run --rm -p 9987:9987/udp -p 10011:10011 -p 30033:30033 ex01:1.0
 	
 #Resources: 
 # https://docs.docker.com/samples/library/teamspeak/#container-shell-access

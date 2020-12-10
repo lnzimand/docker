@@ -1,21 +1,14 @@
-FROM ruby:2.2.2
+FROM ruby
+RUN apt-get update -y && apt-get install -y build-essential libpq-dev nodejs sqlite3
 
-LABEL maintainer="YaQwaQwa <lnzimand@student.wethinkcode.co.za>"
+ONBUILD COPY app /opt/app
+ONBUILD WORKDIR /opt/app
 
-# see http://guides.rubyonrails.org/command_line.html#rails-dbconsole
-RUN apt-get update && apt-get install -y mysql-client sqlite3 --no-install-recommends
-RUN gem install rails --version 4.2.4
-
-ENV RAILS_VERSION 5.0.1
-ENV RAILS_ENV=development
-
-RUN mkdir -p /opt/app
-WORKDIR /opt/app
-
-ONBUILD ADD app /opt/app
-
+ONBUILD EXPOSE 3000
 ONBUILD RUN bundle install
-ONBUILD RUN rake db:setup
+ONBUILD RUN gem install bundler:1.10.4
+ONBUILD RUN rake db:migrate
 ONBUILD RUN rake db:seed
-#docker build -t ft-rails:on-build .
-#docker run -it --rm ft-rails:on-build
+
+# How to build it?
+# docker build -t <tag name> .

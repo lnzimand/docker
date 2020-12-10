@@ -1,4 +1,4 @@
-FROM ft-rails:on-build
+FROM ft-rails:ex02
 
 LABEL maintainer="YaQwaQwa <lnzimand@student.wethinkcode.co.za>"
 
